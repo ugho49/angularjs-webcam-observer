@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="webcamApp">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div class="routes">
+            <!-- We'll also add some navigation: -->
+            <button class="btn btn-primary" ui-sref="home">Home</button>
+            <button class="btn btn-primary" ui-sref="webcams">Webcams</button>
+        </div>
+
+        <br/>
+
+        <div ui-view></div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/lodash/4.13.1/lodash.min.js" charset="utf-8"></script>
+    <script src="node_modules/angular/angular.min.js" charset="utf-8"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js" charset="utf-8"></script>
+    <script src="node_modules/restangular/dist/restangular.min.js" charset="utf-8"></script>
+
+    <!-- My Scripts -->
+    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/router.js" charset="utf-8"></script>
+    <script src="js/controllers/mainCtrl.js" charset="utf-8"></script>
+    <script src="js/controllers/webcamCtrl.js" charset="utf-8"></script>
+</body>
+</html>

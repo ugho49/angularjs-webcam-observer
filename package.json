@@ -1,0 +1,16 @@
+{
+  "name": "webcam-observer",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-ui-router": "^0.3.0",
+    "json-server": "^0.8.14",
+    "restangular": "^1.5.2"
+  }
+}
