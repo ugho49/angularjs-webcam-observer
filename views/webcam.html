@@ -1,4 +1,6 @@
 <div>
     <h1>webcams</h1>
-    <h2>{{webcams}}</h2>
+    <div ng-repeat="webcam in webcams track by $index">
+        <img src="{{webcam.url}}" class="col-md-3">
+    </div>
 </div>

@@ -1,19 +1,15 @@
 angular.module('webcamApp').service("WebcamService", ['Restangular', function (Restangular) {
 
-    Restangular.setBaseUrl("http://foaas.com/");
+    Restangular.setDefaultHeaders({
+        'Content-Type' : 'application/json',
+    });
 
-    Restangular.setDefaultHeaders({'Content-Type' : 'application/json'});
-
-    this.message = "default";
-
-    this.getMessage = function(key) {
+    this.getList = function(key) {
         var map = {
-            Birth: 'off/Robert/Jean',
-            Childhood: 'you/Jean/Robert',
-            Study: 'this/Christine'
+            webcams: 'http://localhost:3000/webcams',
         };
 
-        return Restangular.one(map[key]).get().then(function(response){
+        return Restangular.allUrl('searchAll', map[key]).getList().then(function(response){
             return response;
         });
     };

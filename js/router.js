@@ -14,11 +14,11 @@ angular.module('webcamApp').config(function($stateProvider, $urlRouterProvider) 
     $stateProvider.state('webcams', {
         url: '/webcams',
         templateUrl: 'views/webcam.html',
+        controller: 'WebcamCtrl',
         resolve: {
             webcams: function(WebcamService) {
-                return WebcamService.getMessage('Birth');
+                return WebcamService.getList('webcams');
             }
-        },
-        controller: 'WebcamCtrl'
+        }
     });
 });
