@@ -1,28 +1,24 @@
-angular.module('webcamApp').config(function($stateProvider, $urlRouterProvider, RestangularProvider) {
-    // For any unmatched url, redirect to /
-    $urlRouterProvider.otherwise("/");
-
-    //RestangularProvider.setBaseUrl("http://foaas.com/");
-
-    //RestangularProvider.setDefaultHeaders({'Content-Type' : 'application/json'});
+angular.module('webcamApp').config(function($stateProvider, $urlRouterProvider) {
 
     _.contains = _.includes;
+
+    // For any unmatched url, redirect to /
+    $urlRouterProvider.otherwise("/");
 
     $stateProvider.state('home', {
         url: '/',
         controller: 'MainCtrl',
         templateUrl: 'views/index.html'
-    })
+    });
 
     $stateProvider.state('webcams', {
         url: '/webcams',
         templateUrl: 'views/webcam.html',
-        controller: 'WebcamCtrl',
         resolve: {
-            application: ['service',
-                function (service) {
-                    return service.getMessage('Birth');
-                }]
-        }
-    })
+            webcams: function(WebcamService) {
+                return WebcamService.getMessage('Birth');
+            }
+        },
+        controller: 'WebcamCtrl'
+    });
 });
