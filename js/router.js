@@ -15,8 +15,14 @@ angular.module('webcamApp').config(function($stateProvider, $urlRouterProvider, 
     })
 
     $stateProvider.state('webcams', {
-        url: '/operations',
+        url: '/webcams',
         templateUrl: 'views/webcam.html',
-        controller: 'WebcamCtrl'
+        controller: 'WebcamCtrl',
+        resolve: {
+            application: ['service',
+                function (service) {
+                    return service.getMessage('Birth');
+                }]
+        }
     })
 });
